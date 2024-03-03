@@ -17,7 +17,6 @@ const loginRoute = require('./routes/login');
 const homeRoute = require('./routes/home');
 const logoutRoute = require('./routes/logout');
 const flash = require('connect-flash');
-const helmet = require('helmet');
 
 const app = express();
 const port = 3000;
@@ -91,7 +90,6 @@ app.use('/', uploadRoute);
 app.use('/', checkRoute);
 app.use('/', pointsRoute);
 app.use('/', withdrawRoute);
-app.use(helmet());
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
