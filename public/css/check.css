@@ -1,0 +1,86 @@
+/* public/css/check.css */
+/* Styles for the check page */
+
+/* Header Styles */
+
+
+/* Form Styles */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+/* Image List Styles */
+.image-list {
+  list-style: none;
+  padding: 0;
+}
+
+.image-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.user-info,
+.image-info {
+  margin-bottom: 10px;
+}
+
+.actions {
+  text-align: right;
+}
+
+.reward-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.reward-button:hover {
+  background-color: #2980b9;
+}
+
+/* No Permission Message Styles */
+.no-permission-message {
+  color: #d9534f;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  /* Adjust styles for smaller screens if needed */
+  .container {
+      max-width: 100%;
+      padding: 0 10px;
+  }
+}

@@ -1,0 +1,92 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navigation Links Styles */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  margin-left: auto;
+}
+
+/* User Account Styles (replace with your icon styling) */
+.user-account {
+  margin-left: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .search-bar {
+    margin-left: 0;
+  }
+
+  /* Add a button for the mobile menu */
+  .menu-btn {
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+  }
+}
+
+/* User Info Styles */
+.user-info {
+  margin-left: auto;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 20px;
+}

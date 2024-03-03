@@ -1,0 +1,64 @@
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links li {
+  margin: 0 15px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold; /* Improve readability */
+}
+
+.contact-info {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px; /* Adjust the size of social media icons */
+}
+
+/* Styling for specific social media icons */
+.social-icons i {
+  /* Add styling for specific social media icons (e.g., FontAwesome or other icon libraries) */
+  /* Example:
+  color: #3b5998; (Facebook)
+  color: #55acee; (Twitter)
+  color: #25d366; (WhatsApp)
+  */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  /* Adjust styles for smaller screens if needed */
+  .footer-links {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-links li {
+      margin: 10px 0;
+  }
+}

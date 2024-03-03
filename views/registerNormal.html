@@ -1,0 +1,49 @@
+<!-- views/registerNormal.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/register.css">
+  
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/">Home</a>
+      <a href="upload">Upload</a>
+      <a href="points">My Points</a>
+      <a href="withdraw">Withdraw</a>
+      <a href="login" id="loginLink">Login</a>
+      <a href="/logout" id="logoutLink" style="display: none;">Logout</a>
+      <!-- Add more links as needed -->
+    </div>
+    <div class="user-info">
+      <span id="username">Welcome, Guest</span>
+    </div>
+  </nav>
+  <section class="container2">
+    <form action="/register" method="post" class="registration-form">
+      <h1 style="text-align: center;">Normal User Registration</h1>
+      <input type="hidden" name="role" value="normal">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="wallet">Wallet address:</label>
+      <input type="text" id="wallet" name="wallet" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit" class="button">Register</button>
+    </form>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Your Website</p>
+      <!-- Add more footer content as needed -->
+    </div>
+  </footer>
+  <script src="/public/js/navbar.js"></script>
+</body>
+</html>

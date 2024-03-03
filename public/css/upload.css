@@ -1,0 +1,72 @@
+/* Styles for the image upload page */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Container Styles */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container2 {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #bdbdbd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Upload Form Styles */
+.upload-form {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+/* public/css/upload.css */
+.upload-heading {
+  text-align: center;
+  /* Add more styles as needed */
+}
+
+/* Add more styles as needed */
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .container {
+      max-width: 100%;
+      padding: 10px;
+  }
+}

@@ -1,0 +1,43 @@
+<!-- views/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/">Home</a>
+      <a href="/logout" id="logoutLink" style="display: none;">Logout</a>
+      <!-- Add more links as needed -->
+    </div>
+    <div class="user-info">
+      <span id="username">Welcome, Guest</span>
+    </div>
+  </nav>
+
+
+  <section class="container2">
+    <form action="/login" method="post" class="login-form">
+      <h1 style="text-align: center;">Login</h1>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit" class="button">Login</button>
+    </form>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Your Website</p>
+      <!-- Add more footer content as needed -->
+    </div>
+  </footer>
+  <script src="/js/navbar.js"></script>
+</body>
+</html>

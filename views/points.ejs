@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Points</title>
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/points.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="dashboard">Home</a>
+      <a href="upload">Upload</a>
+      <a href="points">My Points</a>
+      <a href="withdraw">Withdraw</a>
+      <a href="login" id="loginLink">Login</a>
+      <a href="/logout" id="logoutLink" style="display: none;">Logout</a>
+      <!-- Add more links as needed -->
+    </div>
+    <div class="user-info">
+      <span id="username">Welcome, Guest</span>
+    </div>
+  </nav>
+  <header class="navbar">
+    <h1>My Points</h1>
+  </header>
+
+  <section class="container">
+    <div class="points-container">
+      <h2>Your Points</h2>
+      <p class="points-count" id="userPoints">Your total points: <%= userPoints || 0 %></p>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Your Website</p>
+      <!-- Add more footer content as needed -->
+    </div>
+  </footer>
+  
+  <script src="/public/js/navbar.js"></script>
+  <script src="/public/js/points.js"></script>
+</body>
+</html>

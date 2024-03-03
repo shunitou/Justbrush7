@@ -1,0 +1,89 @@
+<!-- views/check.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Functionality</title>
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/check.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="dashboard">Home</a>
+      <a href="upload">Upload</a>
+      <a href="points">My Points</a>
+      <a href="withdraw">Withdraw</a>
+      <a href="login" id="loginLink">Login</a>
+      <a href="/logout" id="logoutLink" style="display: none;">Logout</a>
+    </div>
+    <div class="user-info">
+      <span id="username">Welcome, Guest</span>
+    </div>
+  </nav>
+
+  <% if (userRole === 'special') { %>
+    <header class="navbar">
+      <h1>Check Functionality</h1>
+      <nav>
+        <a href="#image-visualization">Image Visualization</a>
+        <a href="#reward-user">Reward User</a>
+      </nav>
+    </header>
+
+    <main id="image-visualization" class="container">
+      <h2>Image Visualization</h2>
+      <form action="/check" method="get">
+        <label for="username">Select Username:</label>
+        <select id="username" name="username">
+          <% usernames.forEach(username => { %>
+            <option value="<%= username %>"><%= username %></option>
+          <% }); %>
+        </select>
+        <button type="submit" class="button">Search Images</button>
+      </form>
+
+      <ul class="image-list">
+        <% images.forEach(image => { %>
+          <li class="image-item">
+            <div class="user-info">
+              User ID: <%= image.username %>
+            </div>
+            <div class="image-container">
+              <img src="<%= image.image_url %>" alt="User Image">
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+
+      <form action="/reward" method="post" name="rewardForm">
+        <div class="actions">
+          <label for="rewardAmount">Reward Amount:</label>
+          <input type="number" id="rewardAmount" name="rewardAmount" required>
+          <label for="rewardUsername">Username:</label>
+          <input type="text" id="username" name="username" required>
+          <button type="submit" class="button">Reward User</button>
+        </div>
+      </form>
+
+      <% if (images.length === 0 && searchPerformed) { %>
+        <p>No images found for the specified username.</p>
+      <% } %>
+    </main>
+
+  <% } else { %>
+    <p class="no-permission-message">You do not have permission to access this page.</p>
+  <% } %>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Your Website</p>
+    </div>
+  </footer>
+  <script src="/js/navbar.js"></script>
+</body>
+</html>
