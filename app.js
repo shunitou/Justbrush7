@@ -21,6 +21,9 @@ const flash = require('connect-flash');
 const helmet = require('helmet');
 const redis = require('redis');
 
+require('dotenv').config();
+
+
 const app = express();
 const port = process.env.PORT || 5000;
 
