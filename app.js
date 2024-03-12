@@ -19,7 +19,7 @@ const logoutRoute = require('./routes/logout');
 const flash = require('connect-flash');
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 
 app.set('view engine', 'ejs');
