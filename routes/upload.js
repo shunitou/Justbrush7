@@ -37,12 +37,14 @@ router.get('/upload', (req, res) => {
 });
 
 router.post('/upload', upload.single('image'), async (req, res) => {
-  const userId = req.user ? req.user.id : null;
-
   try {
-    if (!userId) {
+    // Ensure the user is authenticated
+    if (!req.isAuthenticated()) {
       throw new Error('User not authenticated');
     }
+
+    const userId = req.user.id;
+    const username = req.user.username; // Adjust this based on your user object structure
 
     if (!req.file) {
       throw new Error('No image file provided');
@@ -63,16 +65,15 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     const uploadResult = await upload.done();
     const imageUrl = `https://${params.Bucket}.s3.amazonaws.com/${params.Key}`;
 
-    await pool.query('INSERT INTO images (user_id, image_url) VALUES ($1, $2)', [userId, imageUrl]);
+    await pool.query('INSERT INTO images (user_id, username, image_url) VALUES ($1, $2, $3)', [userId, username, imageUrl]);
 
-    res.send('Image uploaded successfully!');
-
-    res.redirect('/');
+    // Send a success response
+    res.send({ success: true, message: 'Image uploaded successfully!', username });
   
   } catch (error) {
     console.error('Error uploading image:', error.message);
-    res.status(500).json({ error: error.message });
+    // Send an error response
+    res.status(500).json({ success: false, error: error.message });
   }
 });
-
 module.exports = router;
