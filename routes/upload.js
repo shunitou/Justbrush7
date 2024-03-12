@@ -6,17 +6,16 @@ const pool = require('../database');
 const path = require('path');
 const { Readable } = require('stream');
 const router = express.Router();
-
+require('dotenv').config();
 // Configure AWS SDK with your credentials and region
 
 const s3 = new S3Client({
   region: 'eu-west-3',
   credentials: {
-    accessKeyId: 'AKIA2UC27ZDZXU2XVZOT',
-    secretAccessKey: 'n27mh/fZ5RxluEOjP6PagzcwdIODcqUJM34U2m7m',
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   },
 });
-
 const upload = multer({
   storage: multer.memoryStorage(),
   fileFilter: (req, file, callback) => {

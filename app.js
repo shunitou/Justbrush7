@@ -1,12 +1,11 @@
 const express = require('express');
 const session = require('express-session');
-const RedisStore = require('connect-redis')(session);
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const multer = require('multer');
 const bcrypt = require('bcrypt');
 const pool = require('./database');
-const path = require('path');
+const path = require('path');  // Add this line
 const registerRoute = require('./routes/register');
 const uploadRoute = require('./routes/upload');
 const checkRoute = require('./routes/check');
@@ -19,28 +18,20 @@ const homeRoute = require('./routes/home');
 const logoutRoute = require('./routes/logout');
 const flash = require('connect-flash');
 const helmet = require('helmet');
-const redis = require('redis');
 
 require('dotenv').config();
 
-
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
-const redisClient = redis.createClient({
-  // add Redis connection details
-  host: 'your-redis-host',
-  port: 6379,
-  // any other configuration options if needed
-});
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+// Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: true }));
 
+app.use(express.urlencoded({ extended: true }));
 app.use(session({
-  store: new RedisStore({ client: redisClient }),
   secret: process.env.SESSION_SECRET || 'your-default-secret-key',
   resave: false,
   saveUninitialized: false,
